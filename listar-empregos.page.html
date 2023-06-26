@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar-emprego</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-card> 
+  <img scr="https://fdr.com.br/wp-content/uploads/2020/03/39-vagas-de-emprego-na-agencia-do-trabalhador-de-toledo-5d4d8baf4735b.png">
+</ion-card>
+<ion-content>
+  <ion-item>
+    <ion-label> Escolher Profissão</ion-label>
+    <ion-select placeholder="Select Profissões" okText="Choose Profissões" cancelText="Cancel Choice">
+      <ion-select-option value="mecânico">Mecânico</ion-select-option>
+      <ion-select-option value="pedreiro">Pedreiro</ion-select-option>
+      <ion-select-option value="engenheiro">Engenheiro</ion-select-option>
+      <ion-select-option value="advogados">Advogados</ion-select-option>
+      <ion-select-option value="psicólogos">Psicólogos</ion-select-option>
+      <ion-select-option value="tradutores e intérpretes">Pedreiro</ion-select-option>
+      <ion-select-option value="economistas">Economistas</ion-select-option>
+      <ion-select-option value="corretores de imóveis">Corretores de Imóveis</ion-select-option>
+      <ion-select-option value="contadores">Contadores</ion-select-option>
+      <ion-select-option value="jornalistas">Jornalistas</ion-select-option>
+      <ion-select-option value="médicos veterinários">Médicos Meterinários</ion-select-option>
+      <ion-select-option value="médicos">Médicos</ion-select-option>
+      <ion-select-option value="arquitetos">arquitetos</ion-select-option>
+      <ion-select-option value="dentistas">Dentistas</ion-select-option>
+      <ion-select-option value="eletricistas">Eletricistas</ion-select-option>
+      <ion-select-option value="artesãos em cerâmica">Artesãos em Cerãmica</ion-select-option>
+      <ion-select-option value="outro">Outros</ion-select-option>
+    </ion-select>
+  </ion-item>
+<ion-list>
+  <ion-item>
+    <ion-label>empregos</ion-label>
+    <ion-select placeholder="Select vagas de  Emprego" okText="Choose  vagas de emprego" cancelText="Cancel Choice">
+      <ion-select-option value="agronomia">Agronomia</ion-select-option>
+      <ion-select-option value=" lipeza">Lipeza</ion-select-option>
+      <ion-select-option value="vendedores">Vendedores</ion-select-option>
+    </ion-select>
+  </ion-item>
+<ion-button [routerLink]="['/listar-idiomas']">Idiomas</ion-button> 
+</ion-list>
+</ion-content>

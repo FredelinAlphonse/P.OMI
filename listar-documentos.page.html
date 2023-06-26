@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar-documentos</ion-title>
+
+  </ion-toolbar>
+  <ion-buttons slot="end">
+    <ion-button (click)="logout()"><ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
+    
+  </ion-buttons>
+
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+     <ion-title size="large">{{usuario?.nome}}</ion-title>
+    </ion-toolbar> 
+   </ion-header>
+   <ion-card *ngFor="let documento of documentos">
+     <ion-card-header>
+       <ion-card-title>{{documento.nome}}</ion-card-title>
+     
+     </ion-card-header>
+    
+   </ion-card>
+    <ion-item-sliding *ngFor="let doc of documentos">
+    
+      <ion-item >
+        <ion-label>
+                   <h2>{{doc.nome}}</h2>
+          <ion-note class="ion-text-wrap">{{doc.motivo}}</ion-note>
+          <ion-toggle slot="end" [checkbox]="checklist.realizado"(ionChange)="mudarStatus($event, i, documento.id)" ></ion-toggle>
+        </ion-label>
+         </ion-item>
+    </ion-item-sliding>
+ <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFS8poTcJTNsrLoNvL1W2EfE3G6mLsN6zJ-g&usqp=CAU"></ion-img>
+       
+ <ion-item>
+  <ion-item-option color="success" (click)="emitir(doc)">Emitir listar-documentos</ion-item-option>
+</ion-item>
+
+        <ion-button> 
+          <ion-item [routerLink]="['/listar-empregos']">Profissão</ion-item>
+              </ion-button> 
+          
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form> 
+    <ion-list>
+      <ion-item lines="full">
+        <ion-label position="floating">NomeCompleto:</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item  lines="full">
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Senha:</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item linen="full">
+        <ion-label position="floating">Confirma Senha:</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">DataNascimento:</ion-label>
+        <ion-input type="date" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Telefone:</ion-label>
+        <ion-input type="number" aria-required=""></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-select placeholder="Sexo:">
+          <ion-select-option value="f">Feminino</ion-select-option>
+        <ion-select-option value="m">Masculino</ion-select-option>
+  
+      </ion-select>
+      </ion-item>
+      <ion-row>
+  
+    <ion-col>
+      <ion-button type="submit" color="danger" expand="block" (click)="registrar(email.value, senha.value,confirmasenha.value, nomecompleto.value,sexo.value, telefone.value, datanascimento.value)">Registro</ion-button>
+    </ion-col>
+    </ion-row>
+    </ion-list>
+  </form>
+</ion-content>

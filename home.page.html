@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Projetoomi{{usuario?.nome}}</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="logout()"><ion-icon slot="icon-only" name="log-out"></ion-icon></ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  <ion-toolbar>
+  <ion-title size="large">{{usuario?.nome}}</ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <div id="container">
+  <ion-card>
+  <ion-card-content>
+  <ion-list>
+  <ion-item>
+  <ion-label position="floating">Documentos de etapa</ion-label>
+  <ion-input #documentos>Documentos</ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label position="floating">Etapa</ion-label>
+  <ion-checklist #etapas></ion-checklist>
+  </ion-item>
+  
+  <ion-button *ngIf="!idAlteracao" (click)="adicionarDocumento(etapas, documento)">Adicionar</ion-button>
+  <ion-button *ngIf="idAlteracao" (click)="alterarDocumento(etapas, documento)">Alterar</ion-button>
+  
+  </ion-list> 
+ </ion-card-content>
+  </ion-card>
+  <ion-list> 
+<!-- <ion-item *ngFor=let documeto of meusdocumentos | ansync " button (click)=selecionarDocumento(documento)"> -->
+<ion-card-sliding *ngFor="let documento of meusDocumentos">
+ <ion-item button (click)="selecionarDocumento(documento)">
+   <ion-label> <h1>{{documento.etapa}}</h1>
+       <p>Criado em {{documento.criadoEm.toDate()|date:'dd/MM/yyy'}}</p>
+   </ion-label>
+ </ion-item>
+ <ion-card-header>
+   <ion-card-title>{{documento.nome}}</ion-card-title>
+ </ion-card-header>
+ </ion-card-sliding>
+  </ion-list>
+  <ion-card-content>
+     <ion-item *ngFor="let checkedlist of documento.etapas; let i = index">
+       <ion-label class="ion-text-wrap">
+         <h3>{{checkedlist.etapas}}</h3>
+         <p *ngIf="checklist.dataConclusao">{{checklist.dataConclusao|date:'short'}}</p>
+       </ion-label>
+       <ion-toggle slot="end" [checked]="checklist.realizado" (ionChange)="mudarStatus($event, i, documento.id)" ></ion-toggle>
+     </ion-item>
+     
+   
+ <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFS8poTcJTNsrLoNvL1W2EfE3G6mLsN6zJ-g&usqp=CAU"></ion-img>
+ 
+ </ion-card-content>
+</div>
+</ion-content>

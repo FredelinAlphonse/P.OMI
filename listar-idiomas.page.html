@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar-idiomas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let idio of idiomas">
+    <ion-item>
+      <ion-select [(listar-idioma)]="translate" [value]="translate" (ionChange)="changeLanguage()">
+        <ion-select-option value="en">English</ion-select-option>
+        <ion-select-option value="es">Spagnol</ion-select-option>
+        <ion-select-option value="fr">Francês</ion-select-option>
+        <ion-select-option value="pt-br">Portuguêse Brasil</ion-select-option>
+        <ion-select-option value="ita">Italia</ion-select-option>
+        <ion-select-option value="ale">Alemão</ion-select-option>
+        <ion-select-option value="hait">Haitiano</ion-select-option>
+        <ion-select-option value="pt">Português</ion-select-option>
+        <ion-select-option value="pol">Polonês</ion-select-option>
+        <ion-select-option value="ch">Chinês</ion-select-option>
+        <ion-select-option value="la">Latim</ion-select-option>
+        <ion-select-option value="ja">Japonês</ion-select-option>
+        <ion-select-option value="cro">Croata</ion-select-option>
+        <ion-select-option value="fr">Cingalês</ion-select-option>
+        <ion-select-option value="bam">Bambara</ion-select-option>
+        <ion-select-option value="bie">Bielorrusso</ion-select-option>
+        <ion-select-option value="am">Amárico</ion-select-option>
+        <ion-select-option value="ar">Armênio</ion-select-option>
+        <ion-select-option value="ár">Árabe</ion-select-option>
+        <ion-select-option value="al">Albanês</ion-select-option>
+        <ion-select-option value="ai">Aimará</ion-select-option>
+        <ion-select-option value="af">Africâner</ion-select-option>
+        <ion-select-option value="fin">Filipino</ion-select-option>
+        <ion-select-option value="gal">Galês</ion-select-option>
+      </ion-select>
+    </ion-item>
+ 
+    </ion-item-sliding>
+      <ion-item-option color="success" (click)="changeLanguage(lan)">ChangeLanguage</ion-item-option>
+      <ion-button [routerLink]="['/login']">Home</ion-button> 
+
+  </ion-list>
+  
+</ion-content>

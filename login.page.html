@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form> 
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label><br>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Senha</ion-label><br>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="login(email.value, senha.value)">Autenticar</ion-button>
+        <a [routerLink]="['/registro']" class="small-text">Registro</a>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  </form>
+</ion-content>
